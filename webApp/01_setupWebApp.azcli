@@ -23,5 +23,6 @@ az webapp deployment user set --user-name xylo_max --password <<PASSWORD>>
 az webapp deployment source config-local-git -n $webappname -g DotNetAzureTutorial --query [url] -o tsv
 
 
-
 #https://xylo_max@makwieci183193430.scm.azurewebsites.net/makwieci183193430.git
+#az webapp show -n makwieci250534622 -g DotNetAzureTutorial --query defaultHostName -o tsv
+#makwieci250534622.azurewebsites.net
