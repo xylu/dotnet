@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using webapp.Models;
 
 namespace webApp.Models
 {
@@ -13,6 +14,13 @@ namespace webApp.Models
         {
         }
 
-        public DbSet<webapp.Models.Todo> Todo { get; set; }
+        public DbSet<Recipe> Recipe { get; set; }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Recipe>()
+            .Property(r => r.Description)
+            .HasMaxLength(2000);
+    }
     }
 }
