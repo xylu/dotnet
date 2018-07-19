@@ -14,13 +14,13 @@ namespace Tests
         [Fact]
         public void ShouldSaveRecipe()
         {
-            //given
+            //SETUP
             var options = SqliteInMemory
                 .CreateOptions<MyDatabaseContext>();
             using (var context = new MyDatabaseContext(options))
             {
-                //when
                 context.Database.EnsureCreated();
+                //ATEMPT
                 var r = new Recipe
                 {
                     Dish = "Cup of tea",
@@ -30,7 +30,6 @@ namespace Tests
                 };
                 context.Recipes.Add(r);
                 context.SaveChanges();
-              
             }
 
             using (var context = new MyDatabaseContext(options))
@@ -42,8 +41,6 @@ namespace Tests
                 recipe.MinutesToPrepare.ShouldEqual(5);
                 recipe.QualityStars.ShouldEqual(1);
             }
-
-            
         }
     }
 }
