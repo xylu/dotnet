@@ -15,7 +15,7 @@ namespace webApp.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846");
 
-            modelBuilder.Entity("webapp.Models.Recipe", b =>
+            modelBuilder.Entity("webApp.Models.Recipe", b =>
                 {
                     b.Property<int>("RecipeId")
                         .ValueGeneratedOnAdd();
@@ -32,6 +32,12 @@ namespace webApp.Migrations
                     b.HasKey("RecipeId");
 
                     b.ToTable("Recipe");
+
+                    b.HasData(
+                        new { RecipeId = 1, Description = "Boil water and add tea", Dish = "Tea", MinutesToPrepare = 3, QualityStars = 1 },
+                        new { RecipeId = 2, Description = "Boil water. Add coffe and sugar", Dish = "Coffe", MinutesToPrepare = 5, QualityStars = 2 },
+                        new { RecipeId = 3, Description = "Boil water. Add coffe. Add milk. Add sugar", Dish = "Caffe Latte", MinutesToPrepare = 7, QualityStars = 3 }
+                    );
                 });
 #pragma warning restore 612, 618
         }
