@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using webapp.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using webApp.Models;
 
-namespace webApp.Models
+namespace webApp.Data
 {
     public class MyDatabaseContext : DbContext
     {
@@ -14,7 +10,7 @@ namespace webApp.Models
         {
         }
 
-        public DbSet<Recipe> Recipe { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

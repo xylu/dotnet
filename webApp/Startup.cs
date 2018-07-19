@@ -7,12 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using webApp.Models;
 using System;
+using webApp.Data;
 
 namespace webApp
 {
-    public class Startup
+    public class Startup    
     {
         public Startup(IConfiguration configuration)
         {

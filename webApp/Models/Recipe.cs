@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace webapp.Models
+namespace webApp.Models
 {
     public class Recipe
     {
