@@ -1,24 +1,24 @@
-<h1>Weather forecast</h1>
+<h1>Cookbook (DRAFT)</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!recipes"><em>Loading...</em></p>
 
-<table class='table' *ngIf="forecasts">
+<table class='table' *ngIf="recipes">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Dish</th>
+      <th>Description</th>
+      <th>Minutes To Prepare</th>
+      <th>Quality Stars</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.dateFormatted }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let recipe of recipes">
+      <td>{{ recipe.dish}}</td>
+      <td>{{ recipe.description }}</td>
+      <td>{{ recipe.minutesToPrepare }}</td>
+      <td>{{ recipe.qualityStars }}</td>
     </tr>
   </tbody>
 </table>
